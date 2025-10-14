@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Menetrend – demo (IC választható, piktogramokkal)</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="page-header">
+    <div class="title">
+      <span class="train-badge" id="trainBadge">EC</span>
+      <h1 id="trainTitle">177 Metropolitan EuroCity</h1>
+    </div>
+
+    <div class="controls">
+      <label class="switch">
+        <input type="checkbox" id="icToggle" />
+        <span class="slider"></span>
+        <span class="switch-label">IC piktogram</span>
+      </label>
+
+      <button id="addRowBtn" class="btn primary">Sor hozzáadása</button>
+    </div>
+  </header>
+
+  <main class="content">
+    <div class="table-wrap">
+      <table id="ttTable" class="tt">
+        <thead>
+          <tr>
+            <th>Indulás</th>
+            <th>Érkezés</th>
+            <th>Állomás</th>
+            <th>Vág.</th>
+            <th>Megjegyzés <small>(piktogram / szöveg)</small></th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Kezdő minta sor -->
+          <tr>
+            <td><input type="time" value="06:10" aria-label="Indulás"></td>
+            <td><input type="time" value="06:00" aria-label="Érkezés"></td>
+            <td><input type="text" value="Somogyvár" aria-label="Állomás"></td>
+            <td><input type="text" value="3" inputmode="numeric" pattern="[0-9]*" aria-label="Vágány"></td>
+            <td class="note-cell">
+              <div class="note-inputs">
+                <select class="icon-picker" aria-label="Piktogram">
+                  <option value="">— Nincs —</option>
+                  <option value="A">A (példa)</option>
+                  <option value="B">B (példa)</option>
+                  <option value="C">C (példa)</option>
+                </select>
+                <input type="text" class="note-text" placeholder="Megjegyzés…" />
+              </div>
+              <span class="mnr-icon preview" aria-hidden="true"></span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer class="page-footer">
+    <small>Demo – saját fontokkal (Source Sans Pro, MNR2007). Minden lokálisan töltődik.</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
